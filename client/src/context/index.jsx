@@ -11,5 +11,9 @@ export default function GlobalState({children}){
         description:''
     })
 
-    return <GlobalContext.Provider value={{formData,setFormData}}>{children}</GlobalContext.Provider>;
+    const [blogList,setBlogList]= useState([]);
+    const [pending,setPending] =useState(false);
+
+
+    return <GlobalContext.Provider value={{formData,setFormData,blogList,setBlogList,pending,setPending}}>{children}</GlobalContext.Provider>;
 }
